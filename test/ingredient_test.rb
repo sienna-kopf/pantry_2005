@@ -12,9 +12,8 @@ class IngredientTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    skip
     assert_equal "Cheese", @ingredient1.name
     assert_equal "oz", @ingredient1.unit
     assert_equal 50, @ingredient1.calories
-  end 
+  end
 end
