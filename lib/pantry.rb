@@ -32,5 +32,4 @@ class Pantry
     end
     @enough_ingredients
   end
-
 end
