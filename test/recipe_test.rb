@@ -51,4 +51,8 @@ class RecipeTest < Minitest::Test
     assert_equal 440, recipe1.total_calories
     assert_equal 675, recipe2.total_calories
   end
+
+  def test_it_can_return_a_collection_of_ingredient_names
+    assert_equal ["Cheese", "Macaroni"], @recipe1.ingredient_names 
+  end
 end
