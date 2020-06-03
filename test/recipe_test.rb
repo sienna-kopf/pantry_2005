@@ -12,5 +12,12 @@ class RecipeTest < Minitest::Test
 
   def test_it_exists
     assert_instance_of Recipe, @recipe1
-  end 
+  end
+
+  def test_it_is_initialized_with_a_name_and_no_required_ingredients
+    another_recipe = Recipe.new("Grilled Cheese")
+    assert_equal "Grilled Cheese", another_recipe.name
+    expected = Hash.new(0)
+    assert_equal expected, another_recipe.ingredients_required 
+  end
 end
