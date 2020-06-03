@@ -1,3 +1,8 @@
 class Pantry
+  attr_reader :stock
 
-end 
+  def initialize
+    @stock = Hash.new 
+  end
+
+end
