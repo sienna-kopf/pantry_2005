@@ -23,6 +23,10 @@ class PantryTest < Minitest::Test
     expected = Hash.new(0)
     assert_equal expected, another_pantry.stock
     assert_equal 0, another_pantry.stock_check(@ingredient_1)
+
+    recipe = Recipe.new("Noodle Soup")
+    recipe.add_ingredient(@ingredient1, 50)
+    assert_equal false, another_pantry.enough_ingredients_for?(recipe)
   end
 
   def test_it_can_restock
@@ -46,7 +50,7 @@ class PantryTest < Minitest::Test
     pantry = Pantry.new
     pantry.restock(ingredient1, 5)
     pantry.restock(ingredient1, 10)
-    assert_equal false, pantry.enough_ingredients_for?
+    assert_equal false, pantry.enough_ingredients_for?(recipe1)
     pantry.restock(ingredient2, 7)
     assert_equal false, pantry.enough_ingredients_for?(recipe1)
     pantry.restock(ingredient2, 1)
