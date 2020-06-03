@@ -23,6 +23,7 @@ class RecipeTest < Minitest::Test
     assert_equal "Grilled Cheese", another_recipe.name
     expected = Hash.new(0)
     assert_equal expected, another_recipe.ingredients_required
+    assert_equal [], another_recipe.ingredients
   end
 
   def test_it_can_add_ingredients
@@ -31,6 +32,6 @@ class RecipeTest < Minitest::Test
       @ingredient2 => 8
     }
     assert_equal expected, @recipe1.ingredients_required
-    assert_equal [@ingredient1, @ingredient2], @recipe1.ingredients 
+    assert_equal [@ingredient1, @ingredient2], @recipe1.ingredients
   end
 end
