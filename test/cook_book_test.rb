@@ -17,6 +17,9 @@ class CookBookTest < Minitest::Test
     @recipe2 = Recipe.new("Cheese Burger")
 
     @cookbook = CookBook.new
+
+    @cookbook.add_recipe(@recipe1)
+    @cookbook.add_recipe(@recipe2)
   end
 
   def test_it_exists
@@ -25,6 +28,10 @@ class CookBookTest < Minitest::Test
 
   def test_it_is_initialized_with_no_recipes
     another_cookbook = CookBook.new
-    assert_equal [], another_cookbook.recipes 
+    assert_equal [], another_cookbook.recipes
+  end
+
+  def test_it_can_add_recipes
+    assert_equal [@recipe1, @recipe2],  @cookbook.recipes
   end
 end
