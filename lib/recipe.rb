@@ -24,4 +24,10 @@ class Recipe
       sum_of_cal
     end
   end
+
+  def ingredient_names
+    @ingredients.map do |ingredient|
+      ingredient.name
+    end 
+  end
 end
